@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
 using System.Web.Routing;
+using System.Web.Security;
 
 namespace mvc_pro_18.Infrastructure
 {
@@ -31,6 +32,9 @@ namespace mvc_pro_18.Infrastructure
                         {"returnUrl",filterContext.HttpContext.Request.RawUrl }
                     }
                     );
+            }
+            else {
+                FormsAuthentication.SignOut();
             }
         }
 
